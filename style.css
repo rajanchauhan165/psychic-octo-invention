@@ -1,26 +1,46 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+  body {
+    font-family: cursive;
+    padding: 10px;
+  }
+  /* Light mode */
+body.light-mode {
+    background-color: #fff;
+    color: #000;
   }
   
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f1f1f1;
+  /* Dark mode */
+  body.dark-mode {
+    background-color: #333;
+    color: #fff;
   }
   
   .container {
-    max-width: 800px;
-    margin: 0 auto;
+    margin: auto;
+    width: 60%;
+    height: 95vh;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
   }
-  
+  .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #dark-mode-toggle{
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 2px;
+    border: 2px solid black;
+    padding: 5px 20px;
+  }
   h1 {
+    font-weight: 800;
+    font-size: 40px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
   
   form {
@@ -34,8 +54,9 @@
     padding: 10px;
     border-radius: 5px;
     border: none;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
     outline: none;
+    background: transparent;
   }
   
   button[type="submit"] {
@@ -56,6 +77,8 @@
   
   
   ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
     margin-bottom: 20px;
   }
@@ -65,7 +88,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    background-color: #f8f9fa;
     border-radius: 5px;
     margin-bottom: 15px;
     box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
@@ -103,3 +125,32 @@
     background-color: #c82333;
   }
   
+
+
+  .title-word {
+    animation: color-animation 5s linear infinite;
+  }
+  .title-word-2 {
+    --color-1: #DBAD4A;
+    --color-2: #ACCFCB;
+    --color-3: #308389;
+  }
+  
+  .title-word-3 {
+    --color-1: #ACCFCB;
+    --color-2: #E4A9A8;
+    --color-3: #ACCFCB;
+  }
+  
+  
+  @keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+  }
+
+

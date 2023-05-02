@@ -108,3 +108,34 @@ function deleteTaskFromLocalStorage(taskItem) {
 function clearTasksFromLocalStorage() {
   localStorage.clear();
 }
+
+
+
+
+//darkmode
+const toggleSwitch = document.querySelector('#dark-mode-toggle');
+const body = document.querySelector('body');
+const localStorageKey = 'dark-mode';
+
+// Load the user's preference for dark mode from local storage
+if (localStorage.getItem(localStorageKey) === 'true') {
+  body.classList.add('dark-mode');
+  body.classList.add('dark-mode');
+  toggleSwitch.checked = true;
+}
+
+toggleSwitch.addEventListener('click', function() {
+  if (body.classList.contains('dark-mode')) {
+    // If dark mode is on, turn it off
+    body.classList.remove('dark-mode');
+    body.classList.add('light-mode');
+    localStorage.setItem(localStorageKey, 'false');
+    document.getElementById('dark-mode-toggle').innerHTML="Dark"
+  } else {
+    // If dark mode is off, turn it on
+    body.classList.remove('light-mode');
+    body.classList.add('dark-mode');
+    localStorage.setItem(localStorageKey, 'true');
+    document.getElementById('dark-mode-toggle').innerHTML="Light"
+  }
+});
